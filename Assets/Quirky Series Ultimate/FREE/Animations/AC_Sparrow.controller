@@ -339,7 +339,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 0, y: 140, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 6784720792757809706}
+  m_DefaultState: {fileID: -4080060793067682125}
 --- !u!1102 &-7697152257987165639
 AnimatorState:
   serializedVersion: 6
@@ -634,7 +634,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk
-  m_Speed: 1
+  m_Speed: 0.76
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -1370,7 +1370,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sit
-  m_Speed: 1
+  m_Speed: 0.38
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -1961,7 +1961,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fly
-  m_Speed: 1
+  m_Speed: 0.52
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
