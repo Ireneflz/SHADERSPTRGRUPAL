@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WaterMaterial
-  m_Shader: {fileID: 4800000, guid: fe6c3adf00c95b24ea7e967ecf3c0c4d, type: 3}
+  m_Shader: {fileID: 4800000, guid: f212e35fd4fe901448fae1dcfad582bf, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -113,7 +113,9 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DepthFactor: 5
+    - _DarknessFactor: 500.6
+    - _DepthDarkness: 0.5
+    - _DepthFactor: 2
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DistortStrength: 0
@@ -141,7 +143,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.33773577, g: 0.6002901, b: 1, a: 1}
+    - _Color: {r: 0.34528282, g: 0.6048452, b: 1, a: 0.6156863}
+    - _DeepColor: {r: 0.20332502, g: 0.4705221, b: 0.6301887, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
