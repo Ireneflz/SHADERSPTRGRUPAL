@@ -1,4 +1,4 @@
-﻿Shader "URP/ToonWithOutline"
+﻿Shader "URP/Toonshader"
 {
     Properties
     {
@@ -18,7 +18,7 @@
             "Queue"="Geometry"
         }
 
-        // ================= OUTLINE PASS =================
+        // --------------------------- OUTLINE PASS ---------------------------
         Pass
         {
             Name "Outline"
@@ -69,7 +69,7 @@
             ENDHLSL
         }
 
-        // ================= TOON PASS =================
+        // --------------------------- TOON PASS ---------------------------
         Pass
         {
             Name "Toon"
