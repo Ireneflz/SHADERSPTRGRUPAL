@@ -1,4 +1,4 @@
-Shader "Custom/Water_URP"
+Shader "Custom/WaterShader"
 {
     Properties
     {
@@ -7,7 +7,6 @@ Shader "Custom/Water_URP"
 
         _DepthFactor("Foam Depth Factor", Float) = 1
         _DepthDarkness("Depth Darkness", Float) = 0.5
-        _DeepColor("Deep Water Color", Color) = (0,0.15,0.25,1)
 
         _WaveSpeed("Wave Speed", Float) = 1
         _WaveAmp("Wave Amplitude", Float) = 0.2
@@ -65,8 +64,6 @@ Shader "Custom/Water_URP"
             float _DepthFactor;
             float _DepthDarkness;
 
-            float4 _DeepColor;
-
             float _WaveSpeed;
             float _WaveAmp;
             float _DistortStrength;
@@ -95,7 +92,6 @@ Shader "Custom/Water_URP"
             {
                 float2 screenUV = IN.screenPos.xy / IN.screenPos.w;
 
-                // --- Distorsión del fondo ---
                 float noise = SAMPLE_TEXTURE2D(
                     _NoiseTex, sampler_NoiseTex, IN.uv).r;
 
@@ -109,7 +105,6 @@ Shader "Custom/Water_URP"
                                      sampler_CameraOpaqueTexture,
                                      screenUV);
 
-                // --- Profundidad ---
                 float rawDepth =
                     SAMPLE_TEXTURE2D(_CameraDepthTexture,
                                      sampler_CameraDepthTexture,
@@ -124,7 +119,6 @@ Shader "Custom/Water_URP"
 
                 float depthDiff = max(0, sceneDepth - waterDepth);
 
-                // --- Espuma ---
                 float foamLine =
                     saturate(1 - depthDiff * _DepthFactor);
 
@@ -134,7 +128,6 @@ Shader "Custom/Water_URP"
                                      float2(foamLine, 0.5)).rgb
                     * _EdgeColor.rgb;
 
-                // --- Color base del agua ---
                 half3 albedo =
                     SAMPLE_TEXTURE2D(_MainTex,
                                      sampler_MainTex,
@@ -145,17 +138,12 @@ Shader "Custom/Water_URP"
                 half3 waterColor =
                     lerp(baseColor, foamColor, foamLine);
 
-                // --- Oscurecimiento por profundidad ---
                 float depthFade =
                     saturate(depthDiff * _DepthDarkness);
 
-                half3 deepWater = _DeepColor.rgb;
-
-                // Oscurecer también el fondo por profundidad
                 half3 darkBackground =
-                    lerp(background.rgb, _DeepColor.rgb, depthFade);
+                    lerp(background.rgb, waterColor, depthFade);
 
-                // Mezclar fondo y agua por alpha
                 half3 composedColor =
                     lerp(darkBackground, waterColor, _Color.a);
 
