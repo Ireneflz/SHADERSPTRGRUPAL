@@ -123,11 +123,11 @@ Material:
     - _OutValue: 0
     - _OutlineExtrusion: 0
     - _OutlineSize: -0.05
-    - _OutlineWidth: 1.07
+    - _OutlineWidth: 2.4
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Shades: 4
+    - _Shades: 3.35
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -138,7 +138,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Albedo: {r: 0.44696337, g: 0.6679245, b: 0.33648273, a: 1}
-    - _BaseColor: {r: 1, g: 0.9860378, b: 0.5113207, a: 1}
+    - _BaseColor: {r: 1, g: 0.9759095, b: 0.2471698, a: 1}
     - _Color: {r: 0.735849, g: 0.0541473, b: 0.0541473, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _InkColor: {r: 0.690566, g: 0.36352435, b: 0.36352435, a: 0}
